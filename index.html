@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shourtcut icon" type="website-icon" href="book-bookmark-solid.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>Book mark</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-center py-5 mx-auto position-relative">Book marker</h1>
+        <div class="bookmark gap-4 w-100 p-3 d-flex justify-content-center align-items-center flex-column">
+            <h2 class="pt-2 fs-4">
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="site-name w-100 d-flex flex-column justify-content-center">
+                <label for="siteName" class="fw-bold py-2">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>
+                    Site Name
+                </label>
+                <input oninput="validateBooksName()" type="text" id="siteName" class="form-control" placeholder="Bookmark Name">
+                <p class="text-danger d-none" id="wrongName">Invalid name (Start with capital character 'Abcde')</p>
+            </div>
+            <div class="site-url w-100 d-flex flex-column justify-content-center">
+                <label for="siteUrl" class="fw-bold py-2">
+                    <i class="fa-solid fa-link pe-2"></i>
+                    Site URL
+                </label>
+                <input oninput="validateBooksUrl()" type="text" id="siteUrl" class="form-control" placeholder="Website URL">
+                <p class="text-danger d-none" id="wrongUrl">Site URL must be a valid one</p>
+            </div>
+            <button onclick="submitBtn()" class="btn btn-danger px-5" id="submitBtn">Submit</button>
+        </div>
+        <div class="w-100 mx-auto py-5">
+            <h4>Search ...</h4>
+            <input type="text" oninput="searchByName(this.value)" class="form-control">
+        </div>
+        <table class="table w-100 mt-4 mx-auto text-center">
+            <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tBody">
+            </tbody>
+        </table>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
